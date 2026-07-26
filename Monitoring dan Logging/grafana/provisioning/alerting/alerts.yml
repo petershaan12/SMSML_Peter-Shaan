@@ -1,0 +1,98 @@
+apiVersion: 1
+
+groups:
+  - orgId: 1
+    name: model-health
+    folder: Machine Learning Alerts
+    interval: 1m
+    rules:
+      - uid: model-not-loaded
+        title: Model Not Loaded
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange: {from: 300, to: 0}
+            datasourceUid: prometheus
+            model:
+              expr: model_loaded
+              instant: true
+              refId: A
+          - refId: C
+            relativeTimeRange: {from: 0, to: 0}
+            datasourceUid: __expr__
+            model:
+              conditions:
+                - evaluator: {params: [1], type: lt}
+                  operator: {type: and}
+                  query: {params: [C]}
+                  reducer: {params: [], type: last}
+                  type: query
+              datasource: {type: __expr__, uid: __expr__}
+              expression: A
+              refId: C
+              type: threshold
+        for: 1m
+        noDataState: Alerting
+        execErrState: Error
+        annotations: {summary: "Model artifact is unavailable"}
+        labels: {severity: critical}
+      - uid: high-inference-latency
+        title: High Inference Latency
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange: {from: 300, to: 0}
+            datasourceUid: prometheus
+            model:
+              expr: histogram_quantile(0.95, sum by (le) (rate(model_prediction_latency_seconds_bucket[5m])))
+              instant: true
+              refId: A
+          - refId: C
+            relativeTimeRange: {from: 0, to: 0}
+            datasourceUid: __expr__
+            model:
+              conditions:
+                - evaluator: {params: [1], type: gt}
+                  operator: {type: and}
+                  query: {params: [C]}
+                  reducer: {params: [], type: last}
+                  type: query
+              datasource: {type: __expr__, uid: __expr__}
+              expression: A
+              refId: C
+              type: threshold
+        for: 5m
+        noDataState: NoData
+        execErrState: Error
+        annotations: {summary: "p95 inference latency is above one second"}
+        labels: {severity: warning}
+      - uid: input-drift
+        title: Input Drift Detected
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange: {from: 300, to: 0}
+            datasourceUid: prometheus
+            model:
+              expr: model_input_drift_score
+              instant: true
+              refId: A
+          - refId: C
+            relativeTimeRange: {from: 0, to: 0}
+            datasourceUid: __expr__
+            model:
+              conditions:
+                - evaluator: {params: [3], type: gt}
+                  operator: {type: and}
+                  query: {params: [C]}
+                  reducer: {params: [], type: last}
+                  type: query
+              datasource: {type: __expr__, uid: __expr__}
+              expression: A
+              refId: C
+              type: threshold
+        for: 5m
+        noDataState: NoData
+        execErrState: Error
+        annotations: {summary: "Mean standardized feature magnitude is above three"}
+        labels: {severity: warning}
