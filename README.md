@@ -20,5 +20,5 @@ Sebelum menjalankan notebook di Google Colab, tambahkan secret `DAGSHUB_TOKEN`. 
 
 Run DagsHub dan bukti aslinya tersedia di `Membangun_model/`:
 
-- `screenshoot_dashboard.png`
-- `screenshoot_artifak.png`
+- `screenshoot_dashboard.jpg`
+- `screenshoot_artifak.jpg`
