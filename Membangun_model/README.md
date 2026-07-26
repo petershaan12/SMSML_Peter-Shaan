@@ -28,7 +28,7 @@ Hasil eksperimen daring dapat dilihat di:
 
 Setelah training selesai, simpan dua bukti berikut:
 
-- `screenshoot_dashboard.jpg`: halaman run yang memperlihatkan parameter dan metrik.
-- `screenshoot_artifak.jpg`: tab artifacts yang memperlihatkan model dan folder `evaluation`.
+- `screenshoot_dashboard.png`: halaman run yang memperlihatkan metrik.
+- `screenshoot_artifak.png`: tab artifacts yang memperlihatkan model dan folder `evaluation`.
 
 Pastikan token tidak terlihat pada tangkapan layar.

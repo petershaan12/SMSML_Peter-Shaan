@@ -5,7 +5,7 @@ Repository final submission untuk kelas Membangun Sistem Machine Learning.
 ## Status
 
 - Kriteria 1: selesai (Advanced) — tautan tersedia di `Eksperimen_SML_Peter-Shaan.txt`.
-- Kriteria 2: kode siap dijalankan melalui `Membangun_model/Modelling_Peter-Shaan.ipynb`.
+- Kriteria 2: selesai (Advanced), termasuk run DagsHub dan bukti screenshot.
 - Kriteria 3: belum ditambahkan.
 - Kriteria 4: belum ditambahkan.
 
@@ -18,7 +18,7 @@ Notebook menjalankan MLflow autolog secara lokal, kemudian hyperparameter tuning
 
 Sebelum menjalankan notebook di Google Colab, tambahkan secret `DAGSHUB_TOKEN`. Jangan menyimpan token di source code atau commit GitHub.
 
-Setelah run DagsHub berhasil, tambahkan bukti asli berikut ke `Membangun_model/`:
+Run DagsHub dan bukti aslinya tersedia di `Membangun_model/`:
 
-- `screenshoot_dashboard.jpg`
-- `screenshoot_artifak.jpg`
+- `screenshoot_dashboard.png`
+- `screenshoot_artifak.png`
