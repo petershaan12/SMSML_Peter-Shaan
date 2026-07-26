@@ -5,6 +5,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY 3.prometheus_exporter.py ./prometheus_exporter.py
+COPY 7.inference.py ./inference.py
 COPY model/ model/
 
 EXPOSE 8000

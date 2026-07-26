@@ -19,7 +19,7 @@ Layanan yang tersedia:
 Kirim trafik setelah layanan aktif:
 
 ```bash
-python 7.inference.py --count 100
+docker compose exec api python inference.py --count 100
 ```
 
 Dashboard Grafana **petershaan12 — ML Monitoring** menyediakan 12 panel. Tiga alert yang diprovisikan adalah model tidak termuat, latensi inferensi tinggi, dan input drift. Tambahkan contact point Grafana secara manual agar notifikasi dapat dikirim ke kanal pilihan Anda.
@@ -28,7 +28,7 @@ Dashboard Grafana **petershaan12 — ML Monitoring** menyediakan 12 panel. Tiga 
 
 Simpan tangkapan layar ke folder bernomor yang telah disediakan. Bukti tidak dibuat secara otomatis karena harus memperlihatkan layanan yang benar-benar berjalan dan notifikasi yang benar-benar terkirim.
 
-- `1.bukti_serving.jpg`: halaman Swagger `/docs` dan respons sukses dari `/predict`.
+- `1.bukti_serving/`: halaman Swagger `/docs` dan respons sukses dari `/predict`.
 - `4.bukti monitoring Prometheus/`: minimal tiga screenshot query metrik berbeda.
 - `5.bukti monitoring Grafana/`: screenshot dashboard yang membuktikan minimal sepuluh metrik berbeda.
 - `6.bukti alerting Grafana/`: untuk setiap alert, simpan screenshot rule dan notifikasinya; Advanced membutuhkan tiga alert.

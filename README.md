@@ -6,7 +6,7 @@ Repository final submission untuk kelas Membangun Sistem Machine Learning.
 
 - Kriteria 1: selesai (Advanced) — tautan tersedia di `Eksperimen_SML_Peter-Shaan.txt`.
 - Kriteria 2: selesai (Advanced), termasuk run DagsHub dan bukti screenshot.
-- Kriteria 3: workflow CI tersedia di repository `petershaan12/Workflow-CI`.
+- Kriteria 3: workflow CI berhasil menjalankan MLflow Project dan menyimpan artifact di repository `petershaan12/Workflow-CI`.
 - Kriteria 4: kode serving, Prometheus, Grafana, dashboard, dan alerting telah tersedia; bukti screenshot perlu diambil saat layanan dijalankan.
 
 ## Kriteria 2
