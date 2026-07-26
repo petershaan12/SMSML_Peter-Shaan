@@ -7,7 +7,7 @@ Model dan preprocessor harus tersedia di folder `model/`. Setelah menjalankan `m
 ```bash
 cp ../Membangun_model/artifacts/best_model.joblib model/
 cp ../Membangun_model/breast_cancer_preprocessing/{preprocessor.joblib,metadata.json} model/
-docker compose up --build
+docker compose up --build -d --wait
 ```
 
 Layanan yang tersedia:
